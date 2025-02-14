@@ -17,6 +17,13 @@ function Cities() {
     }, [dispatch])
 
     const {cities,isLoading, error} = useSelector(state => state.cities)
+
+    const x = useSelector(state => state.cities);
+    console.log("X")
+    console.log(x)
+
+    console.log("Cities")
+    console.log(cities)
         
 
 
