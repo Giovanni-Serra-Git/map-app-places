@@ -114,7 +114,7 @@ function fetchCities() {
             }
 
             const data = await res.json()
-            dispatch({type: "city/loaded", payload: data})
+            dispatch({type: "city/loaded", payload: data.cities})
 
             console.log("Data")
             console.log(data)
