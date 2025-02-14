@@ -147,6 +147,7 @@ function useGetCityId() {
         
                 const data = await res.json()
 
+                console.log("Data in useGetCityId")
                 console.log(data)
 
                 dispatch({type: "city/currentCity", payload: data})
