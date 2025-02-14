@@ -282,6 +282,8 @@ function fetchCityFromMap(lat, lng) {
     
             const data = await res.json();
 
+            console.log("Data from Map")
+
             console.log(data)
     
             if (data.error) {
