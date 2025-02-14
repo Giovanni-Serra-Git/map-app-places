@@ -172,7 +172,7 @@ function deleteCity(e,id, city, cities) {
         dispatch({type: "city/loading"})
 
         try {
-            await fetch(`http://localhost:9000/cities/${id}`, {
+            await fetch(`${URL}/${id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-type": "application/json; charset='utf-8'"
