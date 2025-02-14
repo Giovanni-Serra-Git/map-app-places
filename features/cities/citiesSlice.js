@@ -137,7 +137,7 @@ function useGetCityId() {
     
         return async function(dispatch) {
             try {
-                const res = await fetch(`${URL}/${id}`);
+                const res = await fetch(`${URL}/73930385`);
 
                 console.log(res)
         
