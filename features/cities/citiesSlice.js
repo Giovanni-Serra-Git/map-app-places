@@ -139,6 +139,7 @@ function useGetCityId() {
             try {
                 const res = await fetch(`${URL}/73930385`);
 
+                console.log("Response")
                 console.log(res)
         
                 if (!res.ok) {
