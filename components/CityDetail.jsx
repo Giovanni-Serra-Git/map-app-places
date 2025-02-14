@@ -19,6 +19,8 @@ function CityDetail() {
 
 
         const {id} = useParams()
+        console.log("ID in CityDetails")
+        console.log(id)
 
         const getCityId = useGetCityId()
 
@@ -73,7 +75,7 @@ function CityDetail() {
 
             <div className="text-left  w-[80%] mx-auto flex flex-col gap-[1rem]">
                 <p className="text-2xl">City Name</p>
-                <div className="flex items-center gap-[10px]">
+                <div className="flex items-cente1r gap-[10px]">
                     <Flag code={currentCity.emoji} className="w-[20px]" />
                      <p>{currentCity.cityName}</p>
                  </div>
