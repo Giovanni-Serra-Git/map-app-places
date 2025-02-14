@@ -56,7 +56,7 @@ function citiesReducer(state = initialState, action) {
 
         return {
             ...state,
-            currentCity: action.payload,
+            currentCity: action.payload, 
             isLoading: false,
         } 
         
@@ -137,7 +137,7 @@ function useGetCityId() {
     
         return async function(dispatch) {
             try {
-                const res = await fetch(`http://localhost:9000/cities/${id}`);
+                const res = await fetch(`${URL}/${id}`);
 
                 console.log(res)
         
@@ -203,7 +203,7 @@ function reset() {
 // async function createCity(newCity) {
 //     return async function (dispatch) {
 //         try {
-//             const res = await fetch(`http://localhost:9000/cities`, {
+//             const res = await fetch(`${URL}`, {
 //                 method: "POST",
 //                 headers: {
 //                     "Content-type": "application/json; charset='utf-8'"
@@ -237,7 +237,7 @@ function createCity(newCity) {
             dispatch({ type: "city/loading" });
 
             // Richiesta POST per inviare la città al server
-            const response = await fetch("http://localhost:9000/cities", {
+            const response = await fetch("${URL}", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
