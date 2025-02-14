@@ -10,6 +10,8 @@ const initialState = {
     currentCity: null,  
 }
 
+const URL = `/.netlify/functions/cities`
+
 
 function citiesReducer(state = initialState, action) {
     switch (action.type) {
@@ -105,7 +107,7 @@ function fetchCities() {
     return async function(dispatch) {
 
         try {
-            const res = await fetch(`http://localhost:9000/cities`);
+            const res = await fetch(URL);
 
             if (!res.ok) {
                 throw new Error("No data to display"); 
@@ -114,7 +116,8 @@ function fetchCities() {
             const data = await res.json()
             dispatch({type: "city/loaded", payload: data})
 
-            console.log()
+            console.log("Data")
+            console.log(data)
             
         } catch (error) {
             dispatch({type: "city/error", payload: error.message })
