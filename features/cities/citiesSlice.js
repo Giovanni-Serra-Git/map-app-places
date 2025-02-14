@@ -147,7 +147,7 @@ function useGetCityId() {
                 }
         
                 let data = await res.json()
-                data = data.find(city => city.id === id)
+                data = data.cities.find(city => city.id === id)
 
                 console.log("Data in useGetCityId")
                 console.log(data)
