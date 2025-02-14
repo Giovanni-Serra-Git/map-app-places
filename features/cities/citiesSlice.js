@@ -137,7 +137,7 @@ function useGetCityId() {
     
         return async function(dispatch) {
             try {
-                const res = await fetch(`${URL}/73930385`);
+                const res = await fetch(`${URL}/${id}`);
 
                 console.log("Response")
                 console.log(res)
@@ -146,7 +146,8 @@ function useGetCityId() {
                     throw new Error("No data to display")
                 }
         
-                const data = await res.json()
+                let data = await res.json()
+                data = data.find(city => city.id === id)
 
                 console.log("Data in useGetCityId")
                 console.log(data)
