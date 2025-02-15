@@ -234,6 +234,7 @@ function reset() {
 
 // citiesSlice.js o actions.js
 function createCity(newCity) {
+
     console.log("Inside createcity function")
     console.log(newCity)
     return async (dispatch) => {

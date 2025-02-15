@@ -32,37 +32,6 @@ function Form() {
 
     const navigate = useNavigate()
 
-    // useEffect(() => {
-
-    //     setGeocodingError("")
-    //     dispatch({type: "loading"})
-        
-    //     async function fetchCityData() {
-    //             try {
-    //                 const res = await fetchCity(lat,lng)
-    //             if (!res.ok) {
-    //                 throw new Error ("Could not fetch data through lat and long")
-    //             }
-
-    //             const data = await res.json()
-
-    //             dispatch({type: "loaded"})
-    //             setCityName(data.address.province || data.address.state || data.address.municipality || data.address.city_district || "")
-    //             setCountry(data.address.countryName)
-    //             setCountryCode(data.address.country_code)
-    //             setClickedPos(clickedPos => ({...clickedPos, lat: data.lat, lng: data.lon}))
-            
-    //             if (data.error) {
-    //                  setGeocodingError("That does not seem to be a city, click on cities")
-    //                 }
-    //             } catch (error) {
-    //                          setGeocodingError(error.message)
-    //                          dispatch({type: "city/error", payload: error.message})
-    //                     }
-    //     }
-
-    //     fetchCityData()
-    // }, [lat,lng, dispatch])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -165,6 +134,8 @@ function Form() {
 
         console.log("Inside Form: ")
         console.log(newCity)    
+
+        return
   
         // Dispatch dell'azione
         const data = dispatch(createCity(newCity));
