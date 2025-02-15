@@ -240,7 +240,7 @@ function createCity(newCity) {
 
             console.log("New City")
             console.log(newCity)
-            const response = await fetch(`${URL}` , {
+            const response = await fetch(`${URL}/cities` , {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
