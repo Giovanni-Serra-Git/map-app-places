@@ -15,6 +15,9 @@ const URL = `/.netlify/functions/cities`
 
 function citiesReducer(state = initialState, action) {
 
+    console.log("Inside Reducer")
+    console.log(state)
+
     switch (action.type) {
 
         case "loading": {

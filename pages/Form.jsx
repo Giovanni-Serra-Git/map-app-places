@@ -59,48 +59,6 @@ function Form() {
     }, [lat, lng, dispatch]);
     
 
-
-    // useEffect(() => {
-
-    //     setGeocodingError("")
-    //     // setIsLoading(true)
-    //     dispatch({type: "loading"})
-        
-    //     async function fetchCityData() {
-           
-
-    //         try {
-    //             // setIsLoading(true)
-    //             // const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}`)
-    //             const res = await fetchCity(lat,lng)
-    //             if (!res.ok) {
-    //                 throw new Error ("Could not fetch data through lat and long")
-    //             }
-
-    //             console.log(res)
-
-    //             return
-
-    //             const data = await res.json()
-    //             dispatch({type: "loaded"})
-    //             console.log("Inside FORM",data)
-    //             setCityName(data.address.province || data.address.state || data.address.municipality || data.address.city_district || "")
-    //             setCountry(data.address.countryName)
-    //             setCountryCode(data.address.country_code)
-    //             setClickedPos(clickedPos => ({...clickedPos, lat: data.lat, lng: data.lon}))
-
-    //             if (data.error) {
-    //                 setGeocodingError("That does not seem to be a city, click on cities")
-    //             }
-    //         } catch (error) {
-    //              setGeocodingError(error.message)
-    //              dispatch({type: "city/error", payload: error.message})
-    //         }
-    //     }
-
-    //     fetchCityData()
-    // }, [lat,lng, fetchCity, dispatch])
-
     if(!lat || !lng) return <p>Select a point on the map</p>
     if (isLoading) return "Loading...."
     if (error) return error
