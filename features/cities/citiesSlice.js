@@ -233,6 +233,7 @@ function reset() {
 function createCity(newCity) {
     return async (dispatch) => {
         console.log(newCity)
+        return newCity
         // try {
         //     // Inizia il caricamento
         //     dispatch({ type: "city/loading" });
