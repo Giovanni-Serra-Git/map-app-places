@@ -241,8 +241,8 @@ function createCity(newCity) {
     console.log("Inside createcity function")
     console.log(newCity)
     console.log(initialState)
-    return async (dispatch) {
-        dispatch({ type: "city/added", payload: data })
+    return async (dispatch) =>  {
+        dispatch({ type: "city/added", payload: newCity })
     }
 
 
