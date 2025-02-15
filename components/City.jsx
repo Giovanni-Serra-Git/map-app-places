@@ -10,6 +10,9 @@ import { deleteCity } from "../features/cities/citiesSlice";
 
 function City({city}) {
 
+    console.log("Inside City")
+    console.log(city)
+
     const {cities, currentCity, error} = useCities()
 
     const dispatch = useDispatch()
@@ -18,7 +21,7 @@ function City({city}) {
         <Link  className={`${city?.id == currentCity?.id ? "city-active" : ""} flex justify-between items-center w-[80%] mx-auto
         text-center bg-[black] my-[10px]
         p-[10px] rounded-[10px]`}
-        to={`${city.id}?lat=${city.position.lat}&lng=${city.position.lng}`}>
+        to={`${city.id}?lat=${city.position.lat || ""}&lng=${city.position.lng || ""}`}>
             {error && error}
           <div className="flex justify-between w-[100%] cursor-pointer">
               <div className="flex items-center gap-[10px]">
