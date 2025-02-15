@@ -237,6 +237,8 @@ function createCity(newCity) {
 
     console.log("Inside createcity function")
     console.log(newCity)
+
+
     return async (dispatch) => {
         try {
             // Inizia il caricamento
@@ -257,6 +259,9 @@ function createCity(newCity) {
             }
 
             const data = await response.json();
+
+            console.log("Inside create City, data")
+            console.log(data)
 
             // Dispatch dell'azione per aggiungere la città nel Redux store
             dispatch({ type: "city/added", payload: data });
