@@ -89,6 +89,10 @@ function Form() {
             notes,
             position: { lat: clickedPos.lat, lng: clickedPos.lng }
         }; 
+
+        console.log("Inside Form New City")
+        console.log(newCity)
+
   
         // Dispatch dell'azione
         const data = dispatch(createCity(newCity));
