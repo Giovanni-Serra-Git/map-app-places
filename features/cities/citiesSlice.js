@@ -230,6 +230,9 @@ function reset() {
 // citiesSlice.js o actions.js
 function createCity(newCity) {
 
+    console.log("Inside Create City")
+    console.log(newCity)
+
     return async (dispatch) => {
         try {
             // Inizia il caricamento
