@@ -163,12 +163,16 @@ function Form() {
             position: { lat: clickedPos.lat, lng: clickedPos.lng }
         };
 
-        console.log(data)
-        return
-    
+        console.log("Inside Form: Data ")    
+        console.log(data)  
+        console.log("Inside Form: ")
+        console.log(newCity)    
+  
         // Dispatch dell'azione
         const data = dispatch(createCity(newCity));
-        console.log(createCity)
+
+        console.log("Dispatch di data")
+        console.log(data)
 
         if (data) {
             navigate("/app");

@@ -234,13 +234,15 @@ function reset() {
 
 // citiesSlice.js o actions.js
 function createCity(newCity) {
+    console.log("Inside createcity function")
+    console.log(newCity)
     return async (dispatch) => {
         try {
             // Inizia il caricamento
             dispatch({ type: "city/loading" });
 
             // Richiesta POST per inviare la città al server
-            const response = await fetch("${URL}", {
+            const response = await fetch(` ${URL}` , {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
