@@ -85,6 +85,8 @@ function citiesReducer(state = initialState, action) {
         }
 
         case "city/added": 
+        console.log("Citta Aggiornata")
+        console.log(state.cities)
         return {
             ...state,
             cities: [...state.cities, action.payload],
