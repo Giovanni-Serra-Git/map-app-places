@@ -14,6 +14,7 @@ const URL = `/.netlify/functions/cities`
 
 
 function citiesReducer(state = initialState, action) {
+    console.log("Inside Reducer")
     console.log(state)
     switch (action.type) {
 
@@ -240,7 +241,6 @@ function createCity(newCity) {
 
     console.log("Inside createcity function")
     console.log(newCity)
-    console.log(initialState)
     return async (dispatch) =>  {
         dispatch({ type: "city/added", payload: newCity })
     }
