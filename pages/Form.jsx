@@ -190,7 +190,7 @@ function Form() {
             <label htmlFor="date" className="my-[0.5rem] my-[0.5rem] inline-block">When you have been to {cityName}</label><br/>
             <DatePicker
                 id="date"
-                onChange={(date) => setDate(date)}
+                onChange={(date) => setDate(formattingDate(date))}
                 selected={date}
                 dateFormat="dd/MM/yyyy"
                 showIcon="true"
