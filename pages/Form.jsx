@@ -134,8 +134,6 @@ function Form() {
 
         console.log("Inside Form: ")
         console.log(newCity)    
-
-        return
   
         // Dispatch dell'azione
         const data = dispatch(createCity(newCity));
