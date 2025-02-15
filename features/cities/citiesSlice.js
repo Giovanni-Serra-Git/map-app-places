@@ -237,6 +237,9 @@ function createCity(newCity) {
             dispatch({ type: "city/loading" });
 
             // Richiesta POST per inviare la città al server
+
+            console.log("New City")
+            console.log(newCity)
             const response = await fetch(` ${URL}` , {
                 method: "POST",
                 headers: {
