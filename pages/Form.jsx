@@ -163,8 +163,6 @@ function Form() {
             position: { lat: clickedPos.lat, lng: clickedPos.lng }
         };
 
-        console.log("Inside Form: Data ")    
-        console.log(data)  
         console.log("Inside Form: ")
         console.log(newCity)    
   
