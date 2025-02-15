@@ -240,13 +240,15 @@ function createCity(newCity) {
 
             console.log("New City")
             console.log(newCity)
-            const response = await fetch(`${URL}/cities` , {
+            const response = await fetch(`${URL}/cities`, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
                 body: JSON.stringify(newCity),
-            });
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              });
+        
+              dispatch({ type: "city/created", payload: data });
 
             // Se la risposta non è ok, lancia un errore
             if (!response.ok) {
