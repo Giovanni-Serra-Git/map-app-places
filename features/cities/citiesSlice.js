@@ -231,10 +231,11 @@ function reset() {
 
 // citiesSlice.js o actions.js
 function createCity(newCity) {
-
-    console.log("Inside Create City")
-    console.log(newCity)
-    return newCity
+    return async (dispatch) => {
+        console.log("Inside Create City")
+        console.log(newCity)
+        return newCity
+    }
 
     // return async (dispatch) => {
     //     try {

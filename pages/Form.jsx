@@ -96,7 +96,7 @@ function Form() {
 
   
         // Dispatch dell'azione
-        const data = createCity(newCity);
+        const data = dispatch(createCity(newCity));
         console.log("Data")
         console.log(data)
 
