@@ -10,7 +10,7 @@ const initialState = {
     currentCity: null,  
 }
 
-const URL = `/.netlify/functions/cities`
+const URL = `https://rare-fascinated-marlin.glitch.me/cities`
 
 
 function citiesReducer(state = initialState, action) {
