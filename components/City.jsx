@@ -6,6 +6,7 @@ import formattingDate from "../utils/formattingDate";
 import useCities from "../features/cities/useCities";
 import { useDispatch } from "react-redux";
 import { deleteCity } from "../features/cities/citiesSlice";
+import useFormatDate from "../hooks/useFormatDate";
 
 
 function City({city}) {
@@ -13,6 +14,9 @@ function City({city}) {
     console.log("Inside City")
     console.log(city)
     console.log(city.date)
+    const x = useFormatDate("2025-02-16T23:00:00.000Z")
+    console.log("X")
+    console.log(x)
 
     const {cities, currentCity, error} = useCities()
 
