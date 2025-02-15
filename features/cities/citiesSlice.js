@@ -235,42 +235,42 @@ function createCity(newCity) {
     console.log("Inside Create City")
     console.log(newCity)
 
-    return async (dispatch) => {
-        try {
-            // Inizia il caricamento
-            dispatch({ type: "city/loading" });
+    // return async (dispatch) => {
+    //     try {
+    //         // Inizia il caricamento
+    //         dispatch({ type: "city/loading" });
 
-            // Richiesta POST per inviare la città al server
-            const response = await fetch(` ${URL}` , {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(newCity),
-            });
+    //         // Richiesta POST per inviare la città al server
+    //         const response = await fetch(` ${URL}` , {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify(newCity),
+    //         });
 
-            // Se la risposta non è ok, lancia un errore
-            if (!response.ok) {
-                throw new Error("Could not add the city to the list");
-            }
+    //         // Se la risposta non è ok, lancia un errore
+    //         if (!response.ok) {
+    //             throw new Error("Could not add the city to the list");
+    //         }
 
-            const data = await response.json();
+    //         const data = await response.json();
 
-            console.log("Inside create City, data")
-            console.log(data)
+    //         console.log("Inside create City, data")
+    //         console.log(data)
 
-            // Dispatch dell'azione per aggiungere la città nel Redux store
-            dispatch({ type: "city/added", payload: data });
+    //         // Dispatch dell'azione per aggiungere la città nel Redux store
+    //         dispatch({ type: "city/added", payload: data });
 
-            return data; // Restituisci i dati per eventuali utilizzi successivi (ad esempio, nei componenti)
-        } catch (error) {
-            // Gestione dell'errore
-            dispatch({ type: "city/error", payload: error.message });
+    //         return data; // Restituisci i dati per eventuali utilizzi successivi (ad esempio, nei componenti)
+    //     } catch (error) {
+    //         // Gestione dell'errore
+    //         dispatch({ type: "city/error", payload: error.message });
 
-            // Ritorna un errore o null
-            return null;
-        }
-    };
+    //         // Ritorna un errore o null
+    //         return null;
+    //     }
+    // };
 }; 
 
 
