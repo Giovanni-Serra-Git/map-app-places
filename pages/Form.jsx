@@ -96,7 +96,7 @@ function Form() {
 
   
         // Dispatch dell'azione
-        const data = await dispatch(createCity(newCity));
+        const data = createCity(newCity);
         console.log("Data")
         console.log(data)
 
