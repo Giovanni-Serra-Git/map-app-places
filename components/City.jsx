@@ -34,7 +34,7 @@ function City({city}) {
                     <p>{city.cityName}</p>
               </div>
               <div className="flex items-center gap-[6px]">
-                  <div>{formattingDate(city.date) || ""}</div>
+                  {/* <div>{formattingDate(city.date) || ""}</div> */}
                   <button onClick={(e) => dispatch(deleteCity(e,city.id, city, cities))} className="cursor-pointer"><p className="text-lg">&times;</p></button>
               </div>
           </div>
