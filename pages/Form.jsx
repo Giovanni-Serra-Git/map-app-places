@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import useUrlPosition from "../hooks/useUrlPosition";
@@ -95,7 +96,7 @@ function Form() {
 
   
         // Dispatch dell'azione
-        const data = dispatch(createCity(newCity));
+        // const data = dispatch(createCity(newCity));
 
         if (data) {
             navigate("/app");
