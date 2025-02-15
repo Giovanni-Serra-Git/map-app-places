@@ -118,13 +118,11 @@ function CitiesProvider({children}) {
                 }
   
                 const data = await res.json()
-                console.log(data)
                 dispatch({type: "city/loaded", payload: data})
                 // setCities(data)
   
                 
             } catch (error) {
-                console.log(error)
                 dispatch({type: "city/error", payload: error.message })
 
             }
@@ -151,7 +149,6 @@ function CitiesProvider({children}) {
 
             
         } catch (error) {
-            console.log(error)
             dispatch({type: "city/error", payload: error.message})
             // setErrorFetching(error.message)
         }

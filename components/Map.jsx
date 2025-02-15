@@ -50,8 +50,7 @@ function Map() {
     const {cities} = useCities()
 
     const x = useCities()
-    console.log("List of cities ")
-    console.log(x)
+
 
     const [lat,lng] = useUrlPosition()
 

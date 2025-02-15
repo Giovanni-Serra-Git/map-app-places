@@ -19,8 +19,7 @@ function CityDetail() {
 
 
         const {id} = useParams()
-        console.log("ID in CityDetails")
-        console.log(id)
+
 
         const getCityId = useGetCityId()
 
@@ -80,7 +79,6 @@ function CityDetail() {
                      <p>{currentCity.cityName}</p>
                  </div>
                 <p className="text-lg">You went on {currentCity.cityName}</p>
-                {console.log(currentCity)}
                 <p>{currentCity.date ? formattingDate(currentCity.date) : console.log(currentCity
                 )}</p>
                 <p className="text-lg">Your notes</p>

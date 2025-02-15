@@ -6,7 +6,6 @@ import useLogin from "../features/login/useLogin"
 function ProtectedRoute({children}) {
 
     const {isAuth} = useLogin()
-    console.log(isAuth)
     const navigate = useNavigate()
 
     useEffect(() => {

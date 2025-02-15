@@ -14,8 +14,7 @@ const URL = `/.netlify/functions/cities`
 
 
 function citiesReducer(state = initialState, action) {
-    console.log("Inside Reducer")
-    console.log(state)
+
     switch (action.type) {
 
         case "loading": {
@@ -117,10 +116,6 @@ function fetchCities() {
 
             const data = await res.json()
             dispatch({type: "city/loaded", payload: data.cities})
-
-            console.log("Data")
-            console.log(data)
-            
         } catch (error) {
             dispatch({type: "city/error", payload: error.message })
 
@@ -140,9 +135,6 @@ function useGetCityId() {
         return async function(dispatch) {
             try {
                 const res = await fetch(`${URL}/${id}`);
-
-                console.log("Response")
-                console.log(res)
         
                 if (!res.ok) {
                     throw new Error("No data to display")
@@ -151,8 +143,6 @@ function useGetCityId() {
                 let data = await res.json()
                 data = data.cities.find(city => city.id === id)
 
-                console.log("Data in useGetCityId")
-                console.log(data)
 
                 dispatch({type: "city/currentCity", payload: data})
         
@@ -237,52 +227,42 @@ function reset() {
 // citiesSlice.js o actions.js
 function createCity(newCity) {
 
+    return async (dispatch) => {
+        try {
+            // Inizia il caricamento
+            dispatch({ type: "city/loading" });
 
+            // Richiesta POST per inviare la città al server
+            const response = await fetch(` ${URL}` , {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(newCity),
+            });
 
-    console.log("Inside createcity function")
-    console.log(newCity)
-    return async (dispatch) =>  {
-        dispatch({ type: "city/added", payload: newCity })
-    }
+            // Se la risposta non è ok, lancia un errore
+            if (!response.ok) {
+                throw new Error("Could not add the city to the list");
+            }
 
+            const data = await response.json();
 
-    // return async (dispatch) => {
-    //     try {
-    //         // Inizia il caricamento
-    //         dispatch({ type: "city/loading" });
+            console.log("Inside create City, data")
+            console.log(data)
 
-    //         // Richiesta POST per inviare la città al server
-    //         const response = await fetch(` ${URL}` , {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body: JSON.stringify(newCity),
-    //         });
+            // Dispatch dell'azione per aggiungere la città nel Redux store
+            dispatch({ type: "city/added", payload: data });
 
-    //         // Se la risposta non è ok, lancia un errore
-    //         if (!response.ok) {
-    //             throw new Error("Could not add the city to the list");
-    //         }
+            return data; // Restituisci i dati per eventuali utilizzi successivi (ad esempio, nei componenti)
+        } catch (error) {
+            // Gestione dell'errore
+            dispatch({ type: "city/error", payload: error.message });
 
-    //         const data = await response.json();
-
-    //         console.log("Inside create City, data")
-    //         console.log(data)
-    //         console.log(data)
-
-    //         // Dispatch dell'azione per aggiungere la città nel Redux store
-    //         dispatch({ type: "city/added", payload: data });
-
-    //         return data; // Restituisci i dati per eventuali utilizzi successivi (ad esempio, nei componenti)
-    //     } catch (error) {
-    //         // Gestione dell'errore
-    //         dispatch({ type: "city/error", payload: error.message });
-
-    //         // Ritorna un errore o null
-    //         return null;
-    //     }
-    // };
+            // Ritorna un errore o null
+            return null;
+        }
+    };
 }; 
 
 
@@ -300,10 +280,6 @@ function fetchCityFromMap(lat, lng) {
             }
     
             const data = await res.json();
-
-            console.log("Data from Map")
-
-            console.log(data)
     
             if (data.error) {
                 throw new Error("That does not seem to be a city, click on cities");
