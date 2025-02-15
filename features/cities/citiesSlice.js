@@ -85,7 +85,7 @@ function citiesReducer(state = initialState, action) {
         case "city/added": 
         return {
             ...state,
-            cities: [...state.cities.cities, action.payload],
+            cities: [...state.cities, action.payload],
             isLoading: false,
         }
 
